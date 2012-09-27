@@ -1,0 +1,4 @@
+RECIPES
+["controllers", "core", "email", "extras", "frontend", "gems", "git", "init", "models", "prelaunch", "railsapps", "readme", "routes", "setup", "testing", "views"]
+PREFERENCES
+{:authorization=>"cancan", :database=>"sqlite", :fixtures=>"factory_girl", :git=>true, :starter_app=>"admin_app", :frontend=>"bootstrap", :dev_webserver=>"webrick", :form_builder=>"none", :bootstrap=>"sass", :railsapps=>"rails3-bootstrap-devise-cancan", :authentication=>"devise", :unit_test=>"rspec", :templates=>"haml", :devise_modules=>"default", :email=>"gmail", :integration=>"cucumber"}
