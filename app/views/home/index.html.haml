@@ -1,4 +1,102 @@
 .row
   .span6.offset3
-    %h1 Home#index
-    %p Find me in app/views/home/index.html.haml
+    %h1 Sessions Day
+    %p Thursday
+.row
+  .span6.offset2
+    %form.form-horizontal
+      %legend Legend
+      %label Label name
+      %input{:placeholder => "Type something…", :type => "text"}
+        %span.help-block Example block-level help text here.
+        %label.checkbox
+          %input{:type => "checkbox"}
+            Check me out
+        %button.btn{:type => "submit"} Submit
+.row
+  .span6.offset2
+    %form
+      %legend Legend
+      %input{:onchange => "readURL(this);", :type => "file"}/
+      %img#blah{:alt => "your image", :src => "", :height => "0px", :width => "0px"}/
+.row
+  .span6.offset2
+    %legend Today, right now, how true are these statements?
+    %table.table.table-hover
+      %thead
+        %tr
+          %th 
+          %th Not at all true
+          %th Hardly true
+          %th Moderately true
+          %th Exactly true
+      %tbody
+        %tr
+          %td I can always manage to solve difficult problems if I try hard enough.
+          %td 
+            %input{:type => "radio", :name => "q1"}
+          %td 
+            %input{:type => "radio", :name => "q1"}
+          %td
+            %input{:type => "radio", :name => "q1"}
+          %td
+            %input{:type => "radio", :name => "q1"}
+        %tr
+          %td It is easy for me to stick to my aims and accomplish my goals.
+          %td 
+            %input{:type => "radio", :name => "q2"}
+          %td
+            %input{:type => "radio", :name => "q2"}
+          %td
+            %input{:type => "radio", :name => "q2"}
+          %td
+            %input{:type => "radio", :name => "q2"}
+        %tr
+          %td I am confident that I could deal efficiently with unexpected events.
+          %td 
+            %input{:type => "radio", :name => "q3"}
+          %td
+            %input{:type => "radio", :name => "q3"}
+          %td
+            %input{:type => "radio", :name => "q3"}
+          %td
+            %input{:type => "radio", :name => "q3"}
+.row
+  .span6.offset2
+    %legend Legend
+    %form.form-horizontal
+      .control-group
+        %label.control-label Weight
+        .controls
+          %input#inputEmail{:placeholder => "pounds", :type => "text"}
+      .control-group
+        %label.control-label  Height
+        .controls
+          %input#inputPassword{:placeholder => "inches", :type => "text"}
+      .control-group
+        .controls
+          %button.btn{:type => "submit"} Check in
+.row
+  .span6.offset2
+    %legend Watch this short video on changing 
+    %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "http://www.youtube.com/embed/kgI0Xyepzik", :width => "560"}
+ 
+.row
+  .span3.offset6
+    %p The end
+    
+:javascript
+  function readURL(input) {
+         if (input.files && input.files[0]) {
+             var reader = new FileReader();
+
+             reader.onload = function (e) {
+                 $('#blah')
+                     .attr('src', e.target.result)
+                     .width(300)
+                     .height(300);
+             };
+
+             reader.readAsDataURL(input.files[0]);
+         }
+     }
