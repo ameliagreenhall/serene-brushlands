@@ -57,5 +57,8 @@ module Myapp
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    # Change preferred syntax to SASS via http://stackoverflow.com/questions/6006360/how-to-make-rails-3-1-use-sass-over-scss-as-the-default
+    config.sass.preferred_syntax = :sass
   end
 end
