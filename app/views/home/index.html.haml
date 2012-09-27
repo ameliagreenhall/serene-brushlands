@@ -1,22 +1,11 @@
 .row
-  .span6.offset3
-    %h1 Sessions Day
-    %p Thursday
-.row
-  .span6.offset2
-    %form.form-horizontal
-      %legend Legend
-      %label Label name
-      %input{:placeholder => "Type something…", :type => "text"}
-        %span.help-block Example block-level help text here.
-        %label.checkbox
-          %input{:type => "checkbox"}
-            Check me out
-        %button.btn{:type => "submit"} Submit
+  .span6.offset4
+    %h1 Tasks
+
 .row
   .span6.offset2
     %form
-      %legend Legend
+      %legend Upload a photo from your walk today
       %input{:onchange => "readURL(this);", :type => "file"}/
       %img#blah{:alt => "your image", :src => "", :height => "0px", :width => "0px"}/
 .row
@@ -82,8 +71,10 @@
     %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "http://www.youtube.com/embed/kgI0Xyepzik", :width => "560"}
  
 .row
-  .span3.offset6
-    %p The end
+  .span6.offset2
+    %legend Before your walk today... 
+    .well.well-large
+      %p When you put your shoes on before today's walk, spend 60 seconds with your eyes closed, thinking about what you're grateful for.
     
 :javascript
   function readURL(input) {
