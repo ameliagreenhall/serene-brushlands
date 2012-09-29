@@ -75,7 +75,18 @@
     %legend Before your walk today... 
     .well.well-large
       %p When you put your shoes on before today's walk, spend 60 seconds with your eyes closed, thinking about what you're grateful for.
-    
+
+.row
+  .span10.offset1
+    %legend Books read by year (nvd3.js)
+    :css
+      #chart svg {
+        height: 400px;
+      }
+
+    #chart
+      %svg
+  
 :javascript
   function readURL(input) {
          if (input.files && input.files[0]) {
@@ -91,3 +102,25 @@
              reader.readAsDataURL(input.files[0]);
          }
      }
+     
+:javascript
+  nv.addGraph(function() {
+      var chart = nv.models.multiBarChart()
+
+      chart.yAxis
+          .tickFormat(d3.format(',.f'));
+
+      d3.select('#chart svg')
+          .datum(data())
+        .transition().duration(500).call(chart);
+
+      nv.utils.windowResize(chart.update);
+
+      return chart;
+    });
+
+
+  function data(){
+
+  return [{"values": [{"y": 0, "x": "January"}, {"y": 0, "x": "February"}, {"y": 0, "x": "March"}, {"y": 0, "x": "April"}, {"y": 6, "x": "May"}, {"y": 5, "x": "June"}, {"y": 7, "x": "July"}, {"y": 5, "x": "August"}, {"y": 2, "x": "September"}, {"y": 4, "x": "October"}, {"y": 2, "x": "November"}, {"y": 7, "x": "December"}], "key": "2007"}, {"values": [{"y": 2, "x": "January"}, {"y": 3, "x": "February"}, {"y": 9, "x": "March"}, {"y": 5, "x": "April"}, {"y": 7, "x": "May"}, {"y": 11, "x": "June"}, {"y": 10, "x": "July"}, {"y": 3, "x": "August"}, {"y": 4, "x": "September"}, {"y": 3, "x": "October"}, {"y": 8, "x": "November"}, {"y": 1, "x": "December"}], "key": "2008"}, {"values": [{"y": 3, "x": "January"}, {"y": 3, "x": "February"}, {"y": 7, "x": "March"}, {"y": 5, "x": "April"}, {"y": 1, "x": "May"}, {"y": 1, "x": "June"}, {"y": 6, "x": "July"}, {"y": 8, "x": "August"}, {"y": 6, "x": "September"}, {"y": 2, "x": "October"}, {"y": 3, "x": "November"}, {"y": 8, "x": "December"}], "key": "2009"}, {"values": [{"y": 4, "x": "January"}, {"y": 5, "x": "February"}, {"y": 5, "x": "March"}, {"y": 3, "x": "April"}, {"y": 1, "x": "May"}, {"y": 4, "x": "June"}, {"y": 2, "x": "July"}, {"y": 4, "x": "August"}, {"y": 3, "x": "September"}, {"y": 1, "x": "October"}, {"y": 1, "x": "November"}, {"y": 4, "x": "December"}], "key": "2010"}, {"values": [{"y": 8, "x": "January"}, {"y": 9, "x": "February"}, {"y": 7, "x": "March"}, {"y": 9, "x": "April"}, {"y": 4, "x": "May"}, {"y": 8, "x": "June"}, {"y": 11, "x": "July"}, {"y": 5, "x": "August"}, {"y": 6, "x": "September"}, {"y": 3, "x": "October"}, {"y": 3, "x": "November"}, {"y": 4, "x": "December"}], "key": "2011"}, {"values": [{"y": 6, "x": "January"}, {"y": 4, "x": "February"}, {"y": 9, "x": "March"}, {"y": 3, "x": "April"}, {"y": 9, "x": "May"}, {"y": 8, "x": "June"}, {"y": 7, "x": "July"}, {"y": 3, "x": "August"}, {"y": 0, "x": "September"}, {"y": 0, "x": "October"}, {"y": 0, "x": "November"}, {"y": 0, "x": "December"}], "key": "2012"}];
+  }
